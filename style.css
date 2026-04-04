@@ -1,0 +1,36 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-image: url(assets/AAAAAAAAAAAA.png);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+
+}
+
+
+header {
+
+    position: sticky;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    background-color: #2e7d32bb;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 4px;
+
+
+
+}
+
+h2 {
+
+    color: #2e7d32bb;
+    background-color: rgba(255, 255, 255, 0.534);
+    margin-left: 550px;
+    margin-right: 550px;
+    border-radius: 3px;
+
+}
