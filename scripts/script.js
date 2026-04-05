@@ -160,6 +160,30 @@ function validacao() {
         return;
     }
 
+    if(valido) {
+
+        alert("Cadastro\n Nome: " + ncomp + "\n" +
+            "Email: " + email + "\n" +
+            "Telefone: " + telefone + "\n" +
+            "CPF: " + cpf + "\n" +
+            "Cidade: " + cidade + "\n" +
+            "Mora em: " + tipo.value + "\n" +
+            "Disse " + quintal.value + " ter quintal em casa\n" +
+            "Disse " + pets_anteriores + " já ter tido pets anteriormente\n"
+        )
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 
 
 
