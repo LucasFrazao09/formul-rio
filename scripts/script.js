@@ -120,9 +120,24 @@ valido = false;
 
     if (!porque || porque.length === 0) {
         alert("Justifique para completar o cadastro");
-valido = false
+valido = false;
 
     }
+
+}
+
+if(msgem.length === 0) {
+    alert("Informe o motivo da adoção")
+    valido = false;
+} else if (msgem.length < 10) {
+    alert("Muito breve, seja mais específico");
+    valido = false;
+} else if ((msgem === "porque sim") || (msgem === "porque quero") || (msgem === "Porque quero") || (msgem === "Porque sim")) {
+alert("Abra seu coração! Resposta genérica");
+valido = false;
+} else if ((msgem === "Decidi hoje")) {
+ alert("Decisão impulsiva! Tenha cuidado");
+ valido = false
 
 }
 
