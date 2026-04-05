@@ -9,7 +9,7 @@ function validacao() {
     let cidade = document.getElementById("cidade").value;
     let sozinho = document.getElementById("sozinho").value;
     let msgem = document.getElementById("msgem").value;
-    let casa = document.querySelector('select[name="casa"]: checked');
+    let tipo = document.querySelector('select[name="casa"]: checked');
     let quintal = document.querySelector('select[name="casa"]: checked');
     let pets_anteriores = document.querySelector('select[name="pets_anteriores"]: checked');
     let fin = document.querySelector('select[name="financeiro"]: checked');
@@ -48,7 +48,7 @@ function validacao() {
         valido = false
     }
 
-    if(cpf.length === 0) {
+    if(cpf.length == 0) {
         alert("Obrigatório informar o CPF!");
         valido = false;
     } else if (cpf_dup.includes(cpf)) {
@@ -64,20 +64,21 @@ function validacao() {
         valido = false
     }
 
-    if(ncomp.length === 0) {
-        alert("Informe seu nome");
+    if(cidade.length == 0) {
+        alert("Obrigatório o preenchimento!");
         valido = false;
-    } else if (ncomp.length <3) {
-        alert("O nome deve ter no mínimo 3 caracteres");
+    }
+
+    if(!tipo) {
+        alert("Selecione o tipo de moradia");
+        valido = false;
+    } else if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
+        alert("Errro! Um apartamento não pode ter quintal.");
+        valido = false
+    } else if (tipo && tipo.value === "casa" && quintal && quintal.value === "não") {
+        alert("Por não ter um quintal, o espaço pode ser muito pequeno para o animal.");
         valido = false
     }
 
-    if(ncomp.length === 0) {
-        alert("Informe seu nome");
-        valido = false;
-    } else if (ncomp.length <3) {
-        alert("O nome deve ter no mínimo 3 caracteres");
-        valido = false
-    }
 
 }
