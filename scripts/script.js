@@ -48,11 +48,11 @@ function validacao() {
         valido = false
     }
 
-    if(ncomp.length === 0) {
-        alert("Informe seu nome");
+    if(cpf.length === 0) {
+        alert("Obrigatório informar o CPF!");
         valido = false;
-    } else if (ncomp.length <3) {
-        alert("O nome deve ter no mínimo 3 caracteres");
+    } else if (cpf_dup.includes(cpf)) {
+        alert("Esse CPF já foi cadastrado");
         valido = false
     }
 
