@@ -56,11 +56,11 @@ function validacao() {
         valido = false
     }
 
-    if(ncomp.length === 0) {
+    if(idade.length === 0) {
         alert("Informe seu nome");
         valido = false;
-    } else if (ncomp.length <3) {
-        alert("O nome deve ter no mínimo 3 caracteres");
+    } else if (idade < 18) {
+        alert("Você deve ter mais de 18 anos para adotar!");
         valido = false
     }
 
