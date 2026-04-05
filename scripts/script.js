@@ -96,14 +96,33 @@ function validacao() {
 
 if(!fin) {
 alert("Você tem condição financeira para um companheiro?");
-valido = false
+valido = false;
 
 
 } else if (fin && fin.value === "nao") {
 
  alert("Você marcou que nao tem condições financeiras, isso não será bom nem para você nem para o doguinho!!!");
- valido = false
+ valido = false;
 
+
+}
+
+if (sozinho.length === 0) {
+alert("Quanto tempo seu pet ficará sozinho?");
+valido = false;
+
+} else if (isNaN(sozinho)) {
+ alert("informe o tempo somente com números");
+ valido = false;
+
+} else if (sozinho >= 8) {
+    let porque = prompt("Ninguém gosta de ficar tanto tempo sozinho! Quais os motivos desse tempo todo?")
+
+    if (!porque || porque.length === 0) {
+        alert("Justifique para completar o cadastro");
+valido = false
+
+    }
 
 }
 
