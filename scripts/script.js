@@ -43,8 +43,8 @@ function validacao() {
     if(telefone.length === 0) {
         alert("Informe seu telefone");
         valido = false;
-    } else if (ncomp.length <3) {
-        alert("O nome deve ter no mínimo 3 caracteres");
+    } else if (telefone.length <8) {
+        alert("O telefone deve ter no mínimo 8 digitos");
         valido = false
     }
 
