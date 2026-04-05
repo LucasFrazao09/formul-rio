@@ -23,16 +23,16 @@ function validacao() {
 
     let termo = document.getElementById("aceitar");
 
-  
-  if(ncomp.length === 0) {
+
+    if (ncomp.length === 0) {
         alert("Informe seu nome");
         valido = false;
-    } else if (ncomp.length <3) {
+    } else if (ncomp.length < 3) {
         alert("O nome deve ter no mínimo 3 caracteres");
         valido = false
     }
 
-    if(email.length === 0) {
+    if (email.length === 0) {
         alert("Informe seu email");
         valido = false;
     } else if (!email.includes("@")) {
@@ -40,15 +40,15 @@ function validacao() {
         valido = false
     }
 
-    if(telefone.length === 0) {
+    if (telefone.length === 0) {
         alert("Informe seu telefone");
         valido = false;
-    } else if (telefone.length <8) {
+    } else if (telefone.length < 8) {
         alert("O telefone deve ter no mínimo 8 digitos");
         valido = false
     }
 
-    if(cpf.length == 0) {
+    if (cpf.length == 0) {
         alert("Obrigatório informar o CPF!");
         valido = false;
     } else if (cpf_dup.includes(cpf)) {
@@ -56,7 +56,7 @@ function validacao() {
         valido = false
     }
 
-    if(idade.length === 0) {
+    if (idade.length === 0) {
         alert("Informe seu nome");
         valido = false;
     } else if (idade < 18) {
@@ -64,12 +64,12 @@ function validacao() {
         valido = false
     }
 
-    if(cidade.length == 0) {
+    if (cidade.length == 0) {
         alert("Obrigatório o preenchimento!");
         valido = false;
     }
 
-    if(!tipo) {
+    if (!tipo) {
         alert("Selecione o tipo de moradia");
         valido = false;
     } else if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
@@ -80,66 +80,87 @@ function validacao() {
         valido = false
     }
 
-    if(!quintal) {
+    if (!quintal) {
         alert("Diga se tem quintal ou não");
         valido = false;
     }
 
-    if(!pets_anteriores) {
+    if (!pets_anteriores) {
         alert("Informe se ja teve algum pet")
         valido = false;
-} else if (pets_anteriores && pets_anteriores == "nao") {
+    } else if (pets_anteriores && pets_anteriores == "nao") {
 
-    alert("Por você não ter experiências anteriores, a ONG pode disponibilizar um acompanhamento");
-
-}
-
-if(!fin) {
-alert("Você tem condição financeira para um companheiro?");
-valido = false;
-
-
-} else if (fin && fin.value === "nao") {
-
- alert("Você marcou que nao tem condições financeiras, isso não será bom nem para você nem para o doguinho!!!");
- valido = false;
-
-
-}
-
-if (sozinho.length === 0) {
-alert("Quanto tempo seu pet ficará sozinho?");
-valido = false;
-
-} else if (isNaN(sozinho)) {
- alert("informe o tempo somente com números");
- valido = false;
-
-} else if (sozinho >= 8) {
-    let porque = prompt("Ninguém gosta de ficar tanto tempo sozinho! Quais os motivos desse tempo todo?")
-
-    if (!porque || porque.length === 0) {
-        alert("Justifique para completar o cadastro");
-valido = false;
+        alert("Por você não ter experiências anteriores, a ONG pode disponibilizar um acompanhamento");
 
     }
 
-}
+    if (!fin) {
+        alert("Você tem condição financeira para um companheiro?");
+        valido = false;
 
-if(msgem.length === 0) {
-    alert("Informe o motivo da adoção")
-    valido = false;
-} else if (msgem.length < 10) {
-    alert("Muito breve, seja mais específico");
-    valido = false;
-} else if ((msgem === "porque sim") || (msgem === "porque quero") || (msgem === "Porque quero") || (msgem === "Porque sim")) {
-alert("Abra seu coração! Resposta genérica");
-valido = false;
-} else if ((msgem === "Decidi hoje")) {
- alert("Decisão impulsiva! Tenha cuidado");
- valido = false
 
-}
+    } else if (fin && fin.value === "nao") {
+
+        alert("Você marcou que nao tem condições financeiras, isso não será bom nem para você nem para o doguinho!!!");
+        valido = false;
+
+
+    }
+
+    if (sozinho.length === 0) {
+        alert("Quanto tempo seu pet ficará sozinho?");
+        valido = false;
+
+    } else if (isNaN(sozinho)) {
+        alert("informe o tempo somente com números");
+        valido = false;
+
+    } else if (sozinho >= 8) {
+        let porque = prompt("Ninguém gosta de ficar tanto tempo sozinho! Quais os motivos desse tempo todo?")
+
+        if (!porque || porque.length === 0) {
+            alert("Justifique para completar o cadastro");
+            valido = false;
+
+        }
+
+    }
+
+    if (msgem.length === 0) {
+        alert("Informe o motivo da adoção")
+        valido = false;
+    } else if (msgem.length < 10) {
+        alert("Muito breve, seja mais específico");
+        valido = false;
+    } else if ((msgem === "porque sim") || (msgem === "porque quero") || (msgem === "Porque quero") || (msgem === "Porque sim")) {
+        alert("Abra seu coração! Resposta genérica");
+        valido = false;
+    } else if ((msgem === "Decidi hoje")) {
+        alert("Decisão impulsiva! Tenha cuidado");
+        valido = false
+
+    }
+
+    if (!aceitar.checked) {
+        alert("Aceite o termo de responsabilidade");
+        valido = false;
+    }
+
+    if (valido) {
+        if (tipo & tipo.value === "apto") {
+            let resposta1 = prompt("O apartamento permite animais?");
+
+        } else if ((tipo && tipo.value === "casa") && (quintal && quintal.value === "sim")) {
+            let resposta2 = prompt("O quintal é seguro?");
+        }
+
+    }
+
+    if (!valido) {
+        return;
+    }
+
+
 
 
 
