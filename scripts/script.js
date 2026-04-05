@@ -80,5 +80,10 @@ function validacao() {
         valido = false
     }
 
+    if(!quintal) {
+        alert("Diga se tem quintal ou não");
+        valido = false;
+    }
+
 
 }
