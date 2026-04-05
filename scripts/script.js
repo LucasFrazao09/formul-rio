@@ -75,7 +75,7 @@ function validacao() {
     } else if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
         alert("Errro! Um apartamento não pode ter quintal.");
         valido = false
-    } else if (tipo && tipo.value === "casa" && quintal && quintal.value === "não") {
+    } else if (tipo && tipo.value === "casa" && quintal && quintal.value === "nao") {
         alert("Por não ter um quintal, o espaço pode ser muito pequeno para o animal.");
         valido = false
     }
@@ -84,6 +84,31 @@ function validacao() {
         alert("Diga se tem quintal ou não");
         valido = false;
     }
+
+    if(!pets_anteriores) {
+        alert("Informe se ja teve algum pet")
+        valido = false;
+} else if (pets_anteriores && pets_anteriores == "nao") {
+
+    alert("Por você não ter experiências anteriores, a ONG pode disponibilizar um acompanhamento");
+
+}
+
+if(!fin) {
+alert("Você tem condição financeira para um companheiro?");
+valido = false
+
+
+} else if (fin && fin.value === "nao") {
+
+ alert("Você marcou que nao tem condições financeiras, isso não será bom nem para você nem para o doguinho!!!");
+ valido = false
+
+
+}
+
+
+
 
 
 }
