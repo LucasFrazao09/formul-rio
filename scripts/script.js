@@ -160,7 +160,7 @@ function validacao() {
         return;
     }
 
-    if(valido) {
+    if (valido) {
 
         alert("Cadastro\n Nome: " + ncomp + "\n" +
             "Email: " + email + "\n" +
