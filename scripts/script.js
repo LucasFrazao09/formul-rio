@@ -169,8 +169,11 @@ function validacao() {
             "Cidade: " + cidade + "\n" +
             "Mora em: " + tipo.value + "\n" +
             "Disse " + quintal.value + " ter quintal em casa\n" +
-            "Disse " + pets_anteriores + " já ter tido pets anteriormente\n"
-        )
+            "Disse " + pets_anteriores.value + " já ter tido pets anteriormente\n" +
+            "Disse " + fin.value + " ter condições financeiras" +
+            "O pet ficara sozinho " + sozinho + " horas\n" +
+            "Motivo da adoção: " + msgem + "\n"
+        );
 
 
 
