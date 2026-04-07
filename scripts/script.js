@@ -1,5 +1,7 @@
 function validacao() {
 
+    const form = document.getElementById("formAdocao");
+
     let valido = true;
 
     let email = document.getElementById("email").value;
@@ -12,7 +14,7 @@ function validacao() {
     let tipo = document.querySelector('select[name="casa"]: checked');
     let quintal = document.querySelector('select[name="casa"]: checked');
     let pets_anteriores = document.querySelector('select[name="pets_anteriores"]: checked');
-    let fin = document.querySelector('select[name="financeiro"]: checked');
+    let fin = document.getElementById("financeiro");
     let cpf = document.getElementById("cpf").value;
     let cpf_dup = [
         "2136599986",
@@ -24,12 +26,7 @@ function validacao() {
     let termo = document.getElementById("aceitar");
 
 
-    if (ncomp.length === 0) {
-        alert("Informe seu nome");
-        valido = false;
-    } else if (ncomp.length < 3) {
-        alert("O nome deve ter no mínimo 3 caracteres");
-        valido = false
+    if (ncomp.length < 3) return alert("Nome inválido, deve ter mais de 3 letras.")
     }
 
     if (email.length === 0) {
@@ -126,20 +123,6 @@ function validacao() {
 
     }
 
-    if (msgem.length === 0) {
-        alert("Informe o motivo da adoção")
-        valido = false;
-    } else if (msgem.length < 10) {
-        alert("Muito breve, seja mais específico");
-        valido = false;
-    } else if ((msgem === "porque sim") || (msgem === "porque quero") || (msgem === "Porque quero") || (msgem === "Porque sim")) {
-        alert("Abra seu coração! Resposta genérica");
-        valido = false;
-    } else if ((msgem === "Decidi hoje")) {
-        alert("Decisão impulsiva! Tenha cuidado");
-        valido = false
-
-    }
 
     if (!aceitar.checked) {
         alert("Aceite o termo de responsabilidade");
@@ -156,36 +139,8 @@ function validacao() {
 
     }
 
-    if (!valido) {
-        return;
-    }
+   
 
-    if (valido) {
-
-        alert("Cadastro\n Nome: " + ncomp + "\n" +
-            "Email: " + email + "\n" +
-            "Telefone: " + telefone + "\n" +
-            "CPF: " + cpf + "\n" +
-            "Cidade: " + cidade + "\n" +
-            "Mora em: " + tipo.value + "\n" +
-            "Disse " + quintal.value + " ter quintal em casa\n" +
-            "Disse " + pets_anteriores.value + " já ter tido pets anteriormente\n" +
-            "Disse " + fin.value + " ter condições financeiras" +
-            "O pet ficara sozinho " + sozinho + " horas\n" +
-            "Motivo da adoção: " + msgem + "\n"
-        );
-
-
-
-
-
-
-
-
-
-
-
-    }
 
 
 

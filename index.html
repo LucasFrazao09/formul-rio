@@ -16,7 +16,7 @@
 
     <h2>Faça o Cadastro</h2>
 
-    <form>
+    <form id="formAdocao">
         <div><label for="ncomp">Nome completo:</label><br>
             <input type="text" id="nome" required />
         </div>
@@ -54,12 +54,12 @@
             </div>
             <div>
                 <label for="financeiro">Possui condições financeiras para cuidar do pet?</label> <br>
-                <select name="" id="">
-                    <option value="sSim" required> Sim</option>
+                <select name="financeiro" id="financeiro">
+                    <option value="sim" required> Sim</option>
                     <option value="nao"> Não </option>
                 </select>
             </div>
-            <div><label for="hrs">Qantas horas o animal ficará sozinho por dia?</label><br>
+            <div><label for="hrs">Quantas horas o animal ficará sozinho por dia?</label><br>
                 <input type="text" id="sozinho" required />
             </div>
             <div><label for="msg">Qual o motivo da adoção?</label><br>
