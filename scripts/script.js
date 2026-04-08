@@ -26,126 +26,53 @@ function validacao() {
     let termo = document.getElementById("aceitar");
 
 
-    if (ncomp.length < 3) return alert("Nome inválido, deve ter mais de 3 letras.")
-    }
+    if (ncomp.length < 3)
+        return alert("Nome inválido, deve ter mais de 3 letras.");
 
-    if (email.length === 0) {
-        alert("Informe seu email");
-        valido = false;
-    } else if (!email.includes("@")) {
-        alert("O email deve conter @");
-        valido = false
-    }
+    if (!email.includes("@"))
+        return alert("Email Inválido, deve conter @");
 
-    if (telefone.length === 0) {
-        alert("Informe seu telefone");
-        valido = false;
-    } else if (telefone.length < 8) {
-        alert("O telefone deve ter no mínimo 8 digitos");
-        valido = false
-    }
+    if (tel.length < 8)
+        return alert("Telefone Inválido");
 
-    if (cpf.length == 0) {
-        alert("Obrigatório informar o CPF!");
-        valido = false;
-    } else if (cpf_dup.includes(cpf)) {
-        alert("Esse CPF já foi cadastrado");
-        valido = false
-    }
+    if (cpf == "")
+        return ("CPF obrigatório!");
 
-    if (idade.length === 0) {
-        alert("Informe seu nome");
-        valido = false;
-    } else if (idade < 18) {
-        alert("Você deve ter mais de 18 anos para adotar!");
-        valido = false
-    }
+    if (cpf_dup.includes(cpf))
+        return alert("CPF já cadastrado");
 
-    if (cidade.length == 0) {
-        alert("Obrigatório o preenchimento!");
-        valido = false;
-    }
+    if (idade < 18)
+        return alert("Para realizar a adoção você deve ter mais de 18 anos.");
 
-    if (!tipo) {
-        alert("Selecione o tipo de moradia");
-        valido = false;
-    } else if (tipo && tipo.value === "apartamento" && quintal && quintal.value === "sim") {
-        alert("Errro! Um apartamento não pode ter quintal.");
-        valido = false
-    } else if (tipo && tipo.value === "casa" && quintal && quintal.value === "nao") {
-        alert("Por não ter um quintal, o espaço pode ser muito pequeno para o animal.");
-        valido = false
-    }
+    if (cidade == "")
+        return alert("Informe em qual cidade você reside (obrigatório)");
 
-    if (!quintal) {
-        alert("Diga se tem quintal ou não");
-        valido = false;
-    }
+    if (tipo == "")
+        return alert("Informe seu tipo de moradia.");
 
-    if (!pets_anteriores) {
-        alert("Informe se ja teve algum pet")
-        valido = false;
-    } else if (pets_anteriores && pets_anteriores == "nao") {
+    if (!quintal)
+        return alert("Informe sobre o seu quintal");
 
-        alert("Por você não ter experiências anteriores, a ONG pode disponibilizar um acompanhamento");
+    if (sozinho == "" || isNaN(sozinho))
+        return alert("Horas informadas inválidas!");
 
-    }
+    if (msgem.length < 15)
+        return alert("Motivo muito curto! Abra seu coração.");
 
-    if (!fin) {
-        alert("Você tem condição financeira para um companheiro?");
-        valido = false;
+    if (!pets_anteriores)
+        return alert("Informe se ja teve algum pet")
+
+    if (!termo)
+        return alert("Aceite os termos para completar a adoção!");
 
 
-    } else if (fin && fin.value === "nao") {
-
-        alert("Você marcou que nao tem condições financeiras, isso não será bom nem para você nem para o doguinho!!!");
-        valido = false;
-
-
-    }
-
-    if (sozinho.length === 0) {
-        alert("Quanto tempo seu pet ficará sozinho?");
-        valido = false;
-
-    } else if (isNaN(sozinho)) {
-        alert("informe o tempo somente com números");
-        valido = false;
-
-    } else if (sozinho >= 8) {
-        let porque = prompt("Ninguém gosta de ficar tanto tempo sozinho! Quais os motivos desse tempo todo?")
-
-        if (!porque || porque.length === 0) {
-            alert("Justifique para completar o cadastro");
-            valido = false;
-
-        }
-
-    }
-
-
-    if (!aceitar.checked) {
-        alert("Aceite o termo de responsabilidade");
-        valido = false;
-    }
-
-    if (valido) {
-        if (tipo & tipo.value === "apto") {
-            let resposta1 = prompt("O apartamento permite animais?");
-
-        } else if ((tipo && tipo.value === "casa") && (quintal && quintal.value === "sim")) {
-            let resposta2 = prompt("O quintal é seguro?");
-        }
-
-    }
-
-   
-
-
-
+    
 
 
 
 
 
 }
+
+
+
