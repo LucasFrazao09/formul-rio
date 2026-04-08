@@ -1,8 +1,7 @@
-function validacao() {
 
-    const form = document.getElementById("formAdocao");
-
-    let valido = true;
+    document.getElementById("formAdocao").addEventListener("submit", function (e) {
+        e.preventDefault();
+    
 
     let email = document.getElementById("email").value;
     let ncomp = document.getElementById("nome").value;
@@ -109,7 +108,7 @@ function validacao() {
 
 
 
-}
+});
 
 
 
