@@ -65,8 +65,45 @@ function validacao() {
     if (!termo)
         return alert("Aceite os termos para completar a adoção!");
 
-
+    if (tipo == "apto" && quintal.value == "sim") {
+        return alert ("Apartamentos não tem quintal!");
+    }
     
+    if (tipo == "apto" && !permite) {
+        return alert("Apartamento não permite animais.");
+    }
+
+    if (tipo == "casa" && !seguro) {
+        return alert("Informe se o quintal é seguro");
+    }
+
+    if (sozinho > 8) {
+        return alert ("Ninguém gosta de tanto tempo sozinho!");
+    }
+
+    if(pets_anteriores == "nao") {
+        return alert("Se quiser, a ONG oferece ajuda para sua adaptação e cuidar dessa vida!");
+    }
+
+    let msgemInvallida = ["porque eu quero", "porque sim"];
+    if (msgemInvallida.includes(msgem.toLowerCase())) {
+        return alert("Motivo inválido, abra seu coração, o pet merece!")
+    }
+
+    if(!fin) {
+        return alert("Sem condições financeiras é melhor não se comprometer com outra vida");
+    }
+
+    if (impulso) {
+        return alert("Cuidado ao tomar decisões impulsivas!");
+    }
+
+    document.getElementById("informacoes_finais").innerHTML =
+    "Cadastro realizado com sucesso!" +
+    "Nome: " + ncomp + "<br>" +
+    "Email: " + email + "<br>" +
+    "Telefone: " + tel + "<br>" +
+    "Cidade: " + cidade;
 
 
 
