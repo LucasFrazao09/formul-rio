@@ -1,19 +1,22 @@
 
-    document.getElementById("formAdocao").addEventListener("submit", function (e) {
-        e.preventDefault();
-    
+document.getElementById("formAdocao").addEventListener("submit", function (e) {
+    e.preventDefault();
 
+    let divFinal = document.getElementById("informacoes_finais");
     let email = document.getElementById("email").value;
+    let permite = document.getElementById("permite").value;
+    let impulso = document.getElementById("impulso").value;
+    let seguro = document.getElementById("seguro").value;
     let ncomp = document.getElementById("nome").value;
     let telefone = document.getElementById("tel").value;
     let idade = document.getElementById("idade").value;
     let cidade = document.getElementById("cidade").value;
     let sozinho = document.getElementById("sozinho").value;
     let msgem = document.getElementById("msgem").value;
-    let tipo = document.querySelector('select[name="casa"]: checked');
-    let quintal = document.querySelector('select[name="casa"]: checked');
-    let pets_anteriores = document.querySelector('select[name="pets_anteriores"]: checked');
-    let fin = document.getElementById("financeiro");
+    let tipo = document.getElementById("tipo").value;
+    let quintal = document.getElementById("quintal").value;
+    let pets_anteriores = document.getElementById("pets_anteriores").value;
+    let fin = document.getElementById("financeiro").value;
     let cpf = document.getElementById("cpf").value;
     let cpf_dup = [
         "2136599986",
@@ -31,7 +34,7 @@
     if (!email.includes("@"))
         return alert("Email Inválido, deve conter @");
 
-    if (tel.length < 8)
+    if (telefone.length < 8)
         return alert("Telefone Inválido");
 
     if (cpf == "")
@@ -61,26 +64,26 @@
     if (!pets_anteriores)
         return alert("Informe se ja teve algum pet")
 
-    if (!termo)
+    if (!termo.checked)
         return alert("Aceite os termos para completar a adoção!");
 
-    if (tipo == "apto" && quintal.value == "sim") {
-        return alert ("Apartamentos não tem quintal!");
+    if (tipo == "apt" && quintal == "sim") {
+        return alert("Apartamentos não tem quintal!");
     }
-    
-    if (tipo == "apto" && !permite) {
+
+    if (tipo == "apt" && !permite == "Nao") {
         return alert("Apartamento não permite animais.");
     }
 
-    if (tipo == "casa" && !seguro) {
+    if (tipo == "casa" && !seguro == "Nao") {
         return alert("Informe se o quintal é seguro");
     }
 
     if (sozinho > 8) {
-        return alert ("Ninguém gosta de tanto tempo sozinho!");
+        return alert("Ninguém gosta de tanto tempo sozinho!");
     }
 
-    if(pets_anteriores == "nao") {
+    if (pets_anteriores == "nao") {
         return alert("Se quiser, a ONG oferece ajuda para sua adaptação e cuidar dessa vida!");
     }
 
@@ -89,23 +92,23 @@
         return alert("Motivo inválido, abra seu coração, o pet merece!")
     }
 
-    if(!fin) {
+    if (fin == "nao") {
         return alert("Sem condições financeiras é melhor não se comprometer com outra vida");
     }
 
-    if (impulso) {
+    if (impulso == "impulso") {
         return alert("Cuidado ao tomar decisões impulsivas!");
     }
 
-    document.getElementById("informacoes_finais").innerHTML =
-    "Cadastro realizado com sucesso!" +
-    "Nome: " + ncomp + "<br>" +
-    "Email: " + email + "<br>" +
-    "Telefone: " + tel + "<br>" +
-    "Cidade: " + cidade;
 
+    divFinal.classList.remove("popup");
 
-
+    divFinal.innerHTML =
+        "Cadastro realizado com sucesso!" + "<br>" +
+        "Nome: " + ncomp + "<br>" +
+        "Email: " + email + "<br>" +
+        "Telefone: " + telefone + "<br>" +
+        "Cidade: " + cidade;
 
 
 });

@@ -46,10 +46,28 @@
                     <option value="nao">Não</option>
                 </select>
             </div>
+             <div><label> Seu apartamento permite animais?</label><br>
+                <select name="" id="permite">
+                    <option value="Sim">Sim</option>
+                    <option value="Nao">Não</option>
+                </select>
+            </div>
+             <div><label> O quintal é seguro?</label><br>
+                <select name="" id="seguro">
+                    <option value="Sim">Sim</option>
+                    <option value="Nao">Não</option>
+                </select>
+            </div>
             <div><label for="pets">Já teve pets antes?</label><br>
                 <select name="" id="pets_anteriores">
                     <option value="sim" required>Sim</option>
                     <option value="nao">Não</option>
+                </select>
+            </div>
+             <div><label> Essa adoção está sendo por impulso ou foi pensado?</label><br>
+                <select name="" id="impulso">
+                    <option value="impulso">Impulso</option>
+                    <option value="pensei">Pensei</option>
                 </select>
             </div>
             <div>
@@ -70,10 +88,11 @@
                 <input type="checkbox" name="aceitar" id="aceitar" required />
             </div>
 
-            <button type="button " onclick="validacao()"> Cadastro</button>
+            <button type="submit"> Cadastro</button>
 
     </form>
 
+    <div id="informacoes_finais" ></div>
 
 
 
